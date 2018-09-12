@@ -19,19 +19,19 @@ class Scraper
     student = {}
     doc.css('.social-icon-container a').map {|e| e['href']}.each do |link|
       if link.include?("twitter")
-        student[:twitter] = link 
+        student[:twitter] = link
       elsif link.include?("linkedin")
-        student[:linkedin] = link 
+        student[:linkedin] = link
       elsif link.include?("github")
-        student[:github] = link 
+        student[:github] = link
       else
-        student[:blog] = link 
+        student[:blog] = link
       end
     end
-    student[:profile_quote] = doc.css('.profile_quote').text 
-    student[:bio] = doc.css('description-holder p').text 
-    student 
+    student[:profile_quote] = doc.css('.profile_quote').text
+    student[:bio] = doc.css('description-holder p').text
+    student
   end
-  end
+
 
 end
